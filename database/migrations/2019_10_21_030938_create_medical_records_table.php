@@ -16,6 +16,7 @@ class CreateMedicalRecordsTable extends Migration
         Schema::create('medical_records', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('pet_id');
+            $table->nullableUuidMorphs('reference');
             $table->string('procedure');
             $table->text('information');
             $table->timestamp('executed_at')->useCurrent();

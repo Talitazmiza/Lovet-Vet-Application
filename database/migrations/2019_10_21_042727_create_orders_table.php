@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('clinic_id');
             $table->unsignedBigInteger('doctor_id')->nullable();
             $table->string('status', 10);
@@ -27,7 +27,7 @@ class CreateOrdersTable extends Migration
             $table->timestamp('approved_at')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->foreign('clinic_id')->references('id')->on('clinics');
             $table->foreign('doctor_id')->references('id')->on('doctors');
         });
