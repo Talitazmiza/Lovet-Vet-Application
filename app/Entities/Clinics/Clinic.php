@@ -15,6 +15,15 @@ class Clinic extends Model
     protected $table = 'clinics';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'description', 'address', 'phone', 'latitude', 'longitude', 'user_id'
+    ];
+
+    /**
      * declare relation to `user` model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

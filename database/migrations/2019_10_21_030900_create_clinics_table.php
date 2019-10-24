@@ -17,7 +17,7 @@ class CreateClinicsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('name');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('address');
             $table->string('phone');
             $table->string('latitude');
