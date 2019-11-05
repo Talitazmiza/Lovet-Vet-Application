@@ -29,6 +29,7 @@ class UsersTableSeeder extends Seeder
          */
         $userClinic = User::query()->create([
             'name' => 'K n P Clinic',
+            'username' => 'knp.clinic',
             'email' => 'knpclinic@gmail.com',
             'password' => bcrypt('password'),
             'role' => User::ROLE_CLINIC_OWNER,
